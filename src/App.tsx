@@ -16,6 +16,7 @@ const Global = styled.div`
 
   .inactive {
     opacity: 0;
+    display: none;
   }
 `;
 
