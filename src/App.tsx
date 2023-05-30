@@ -42,6 +42,11 @@ const Outer = styled.div`
 
 function App() {
   const [loaded, setLoaded] = useState(false);
+  const [time, setTime] = useState(false);      
+  
+  setTimeout(() => {
+    setTime(true);
+  }, 1000);
 
   document.onreadystatechange = () => {
     setLoaded(document.readyState === "complete");
@@ -49,7 +54,7 @@ function App() {
 
   return (
     <Global>
-      {loaded ? (
+      {loaded && time ? (
         <>
           <Outer>
             <Body />
