@@ -15,11 +15,9 @@ const ReceiptBg = styled.div`
   position: absolute;
   bottom: -${RECEIPT_HEIGHT}px;
   box-shadow: 3px 3px 10px rgb(0 0 0 / 0.2);
-  font-family: "Courier Prime", monospace;
   padding: 16px;
   left: 50%;
   transform: translate(-50%, 0%);
-  text-transform: uppercase;
 
   a {
     color: #333333;

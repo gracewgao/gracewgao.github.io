@@ -1,7 +1,15 @@
-import React from "react";
+import React, { useState } from "react";
 import Receipt from "./components/Receipt";
 import styled from "styled-components";
 import Grain from "./images/grain.png";
+import Loader from "./components/Loader";
+
+const Global = styled.div`
+  width: 100%;
+  height: 100%;
+  font-family: "Courier Prime", monospace;
+  text-transform: uppercase;
+`;
 
 const BodyContainer = styled.div`
   width: 100%;
@@ -33,16 +41,28 @@ const Outer = styled.div`
 `;
 
 function App() {
+  const [loaded, setLoaded] = useState(false);
+
+  document.onreadystatechange = () => {
+    setLoaded(document.readyState === "complete");
+  };
+
   return (
-    <>
-      <Outer>
-        <Body />
-        <Multiply />
-      </Outer>
-      <BodyContainer>
-        <Receipt />
-      </BodyContainer>
-    </>
+    <Global>
+      {loaded ? (
+        <>
+          <Outer>
+            <Body />
+            <Multiply />
+          </Outer>
+          <BodyContainer>
+            <Receipt />
+          </BodyContainer>
+        </>
+      ) : (
+        <Loader />
+      )}
+    </Global>
   );
 }
 
