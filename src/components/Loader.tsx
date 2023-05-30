@@ -3,7 +3,7 @@ import styled from "styled-components";
 import Logo from "../images/logo.svg";
 import Spacer from "./Spacer";
 
-const LoaderBg = styled.div`
+const LoaderBg = styled.div<React.HTMLAttributes<HTMLDivElement>>`
   height: 100vh;
   width: 100%;
   background-color: #333333;
@@ -14,6 +14,7 @@ const LoaderBg = styled.div`
   justify-content: center;
   align-items: center;
   color: white;
+  transition: opacity 0.5s ease-out;
 `;
 
 const LogoWrapper = styled.img`
@@ -42,9 +43,9 @@ const Dots = styled.span`
   }
 `
 
-export default function Loader() {
+export default function Loader(props: React.HTMLAttributes<HTMLDivElement>) {
   return (
-    <LoaderBg>
+    <LoaderBg {...props}>
       <LogoWrapper src={Logo} />
       <Spacer height={32}/>
       <Dots>printing</Dots>

@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import Receipt from "./components/Receipt";
 import styled from "styled-components";
 import Grain from "./images/grain.png";
@@ -9,6 +9,14 @@ const Global = styled.div`
   height: 100%;
   font-family: "Courier Prime", monospace;
   text-transform: uppercase;
+
+  .active {
+    opacity: 1;
+  }
+
+  .inactive {
+    opacity: 0;
+  }
 `;
 
 const BodyContainer = styled.div`
@@ -42,11 +50,14 @@ const Outer = styled.div`
 
 function App() {
   const [loaded, setLoaded] = useState(false);
-  const [time, setTime] = useState(false);      
-  
-  setTimeout(() => {
-    setTime(true);
-  }, 1000);
+  const [time, setTime] = useState(false);
+
+  useEffect(() => {
+    setLoaded(document.readyState === "complete");
+    setTimeout(() => {
+      setTime(true);
+    }, 1000);
+  }, []);
 
   document.onreadystatechange = () => {
     setLoaded(document.readyState === "complete");
@@ -54,19 +65,14 @@ function App() {
 
   return (
     <Global>
-      {loaded && time ? (
-        <>
-          <Outer>
-            <Body />
-            <Multiply />
-          </Outer>
-          <BodyContainer>
-            <Receipt />
-          </BodyContainer>
-        </>
-      ) : (
-        <Loader />
-      )}
+      <Loader className={loaded && time ? "inactive" : "active"} />
+      <Outer>
+        <Body />
+        <Multiply />
+      </Outer>
+      <BodyContainer>
+        <Receipt />
+      </BodyContainer>
     </Global>
   );
 }
