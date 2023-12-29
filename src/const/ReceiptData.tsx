@@ -1,4 +1,4 @@
-export const RECEIPT_HEIGHT = 900;
+export const RECEIPT_HEIGHT = 1000;
 
 const DIVIDER: ILine = {
   text: ["-------------------------------------"],
@@ -17,11 +17,13 @@ export const LINES: ILine[] = [
   { text: ["order #00110"], isLeft: true },
   { text: ["***"], spacing: 8, isLeft: true }, // date
   DIVIDER,
-  { text: ["item", "detail", "date"] }, 
+  { text: ["item", "detail", "date"] },
   DIVIDER,
   { text: ["**internships**"], spacing: 8 },
-  { text: ["bloomberg", "swe intern", "5.23"] },
+  { text: ["datadog", "swe intern", "1.24"] },
   { text: ["", "new york city, ny", "-now"], spacing: 8 },
+  { text: ["bloomberg", "swe intern", "5.23"] },
+  { text: ["", "new york city, ny", "-8.23"], spacing: 8 },
   { text: ["faire", "backend intern", "9.22"] },
   { text: ["", "toronto, on", "-12.22"], spacing: 8 },
   { text: ["faire", "frontend intern", "1.22"] },
@@ -33,24 +35,26 @@ export const LINES: ILine[] = [
   { text: ["uwaterloo", "software engineering;", "9.20"] },
   { text: ["", "combinatorics &", "-4.25"] },
   { text: ["", "optimization minor", ""], spacing: 8 },
+  { text: ["uc3m", "study abroad;", "9.23"] },
+  { text: ["", "madrid, spain", "-12.23"], spacing: 8 },
   DIVIDER,
   { text: ["**currently**"], spacing: 8 },
   { text: ["learning", "web security", ""] },
-  { text: ["", "cryptic crosswords", ""] },
+  { text: ["", "gouache painting", ""] },
   { text: ["", "spanish", ""], spacing: 8 },
-  { text: ["excited", "immersive art", ""] },
-  { text: ["about", "new snacks", ""] },
-  { text: ["", "upcycling", ""], spacing: 8 },
+  { text: ["excited", "interactive art", ""] },
+  { text: ["about", "fb marketplace", ""] },
+  { text: ["", "travel", ""], spacing: 8 },
   DIVIDER,
   { text: ["card: **** **** **** 0160"], isLeft: true },
   { text: ["auth code: 200220"], isLeft: true },
   { text: ["cardholder: grace gao "], isLeft: true, spacing: 24 },
   { text: ["thank you for visiting!"], spacing: 16 },
-  { text: ["open to winter 2024 opportunities"] },
+  { text: ["open to 2025 new grad roles"] },
 ];
 
 export const NO_HIGHLIGHT = new Set<string>([
- "item",
- "detail",
- "date"
+  "item",
+  "detail",
+  "date"
 ]);
