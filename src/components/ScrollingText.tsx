@@ -31,7 +31,7 @@ export default function ScrollingText() {
   let last = 0;
   let ticking = false;
 
-  LINES[2].text = [
+  LINES[3].text = [
     new Date().toLocaleDateString("en-US", {
       weekday: "long",
       month: "long",
@@ -108,7 +108,7 @@ export default function ScrollingText() {
           case 1:
             return (
               <>
-                <FullRow left={row.isLeft ?? false}>{curRow[0]}</FullRow>
+                <FullRow item={curRow[0]} left={row.isLeft ?? false}>{curRow[0]}</FullRow>
                 <Spacer height={row.spacing ?? 0} />
               </>
             );
@@ -129,13 +129,13 @@ export default function ScrollingText() {
       })}
       {showFooter ? (
         <>
-          <FullRow>
+          <FullRow item="get in touch">
             <a href="mailto:grace.gao2@uwaterloo.ca">get in touch</a>
           </FullRow>
           <Spacer height={24} />
           <BarcodeImage />
           <Spacer height={8} />
-          <FullRow>gracewgao.me</FullRow>
+          <FullRow item="gracewgao.me">gracewgao.me</FullRow>
           <Spacer height={16} />
           <IconRow>
             <IconButton link="https://www.linkedin.com/in/gracewgao/">

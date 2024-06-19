@@ -1,6 +1,6 @@
 import React from "react";
 import styled from "styled-components";
-import { NO_HIGHLIGHT } from "../const/ReceiptData";
+import { ALWAYS_HIGHLIGHT, NO_HIGHLIGHT } from "../const/ReceiptData";
 
 interface IItemRow {
   item: string;
@@ -9,13 +9,15 @@ interface IItemRow {
   done?: boolean;
 }
 
-const Row = styled.div`
-  display: flex;
-  width: 100%;
-
+export const HighlightRow = styled.div`
   span:hover {
     background-position: -99.99% 0;
   }
+`;
+
+const Row = styled(HighlightRow)`
+  display: flex;
+  width: 100%;
 `;
 
 const Item = styled.div`
@@ -29,28 +31,36 @@ const Date = styled.div`
   text-align: right;
 `;
 
-const Highlight = styled.span<{ enabled?: boolean }>`
+export const Highlight = styled.span<{
+  enabled?: boolean;
+  permanent?: boolean;
+}>`
   ${(props) =>
-    props.enabled
-      ? `
-      background: linear-gradient(to right, transparent 50%, #f4ffb2 50%);
+    `
+      background: linear-gradient(to right, transparent 50%, ${
+        props.permanent ? "#CCFFC3" : props.enabled ? "#f4ffb2" : "none"
+      } 50%);
       background-size: 200% 100%;
-      background-position: -0% 0;
+      background-position: ${props.permanent ? "-99.99% 0" : "-0% 0"};
       transition: background-position 0.5s ease-out;
-      `
-      : ""}
+      `}
 `;
 
 export default function ItemRow(props: IItemRow) {
   const isHighlight = !NO_HIGHLIGHT.has(props.item);
+  const isPermanent = ALWAYS_HIGHLIGHT.has(props.item);
 
   return (
     <Row>
       <Item>
-        <Highlight enabled={isHighlight}>{props.item ?? ""}</Highlight>
+        <Highlight enabled={isHighlight} permanent={isPermanent}>
+          {props.item ?? ""}
+        </Highlight>
       </Item>
       <Detail>
-        <Highlight enabled={isHighlight}>{props.detail ?? ""}</Highlight>
+        <Highlight enabled={isHighlight} permanent={isPermanent}>
+          {props.detail ?? ""}
+        </Highlight>
       </Detail>
       <Date>{props.date ?? ""}</Date>
     </Row>

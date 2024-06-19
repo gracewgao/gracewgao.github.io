@@ -1,7 +1,7 @@
 import styled from "styled-components";
 import Paper from "../images/paper.png";
 import ScrollingText from "./ScrollingText";
-import HeaderLogo from "../images/header.svg";
+import HeaderLogo from "../images/logo-dark.svg";
 import Spacer from "./Spacer";
 import { RECEIPT_HEIGHT } from "../const/ReceiptData";
 
@@ -25,7 +25,7 @@ const ReceiptBg = styled.div`
 `;
 
 const Header = styled.img`
-  width: 150px;
+  width: 84px;
   display: block;
   margin: 0 auto;
 `;
