@@ -129,8 +129,8 @@ export default function ScrollingText() {
       })}
       {showFooter ? (
         <>
-          <FullRow item="get in touch">
-            <a href="mailto:grace.gao2@uwaterloo.ca">get in touch</a>
+          <FullRow item="see resume">
+            <a href="Grace_Gao_resume.pdf">resume</a>
           </FullRow>
           <Spacer height={24} />
           <BarcodeImage />

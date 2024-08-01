@@ -1,4 +1,4 @@
-export const RECEIPT_HEIGHT = 1080;
+export const RECEIPT_HEIGHT = 1000;
 
 const DIVIDER: ILine = {
   text: ["-------------------------------------"],
@@ -12,10 +12,19 @@ export interface ILine {
   isLeft?: boolean;
 }
 
+const randomNumber = (n: number): string => {
+  let result = "";
+  for (let i = 0; i < n; i++) {
+    const randomDigit = Math.floor(Math.random() * 10);
+    result += randomDigit.toString();
+  }
+  return result;
+};
+
 export const LINES: ILine[] = [
   { text: ["grace gao"] },
   { text: ["(she/her)"], spacing: 16 },
-  { text: ["order #00110"], isLeft: true },
+  { text: [`order #${randomNumber(5)}`], isLeft: true },
   { text: ["***"], spacing: 8, isLeft: true }, // date
   DIVIDER,
   { text: ["item", "detail", "date"] },
@@ -29,10 +38,8 @@ export const LINES: ILine[] = [
   { text: ["", "new york city, ny", "-8.23"], spacing: 8 },
   { text: ["faire", "security intern", "9.22"] },
   { text: ["", "toronto, on", "-12.22"], spacing: 8 },
-  { text: ["", "frontend intern", "1.22"] },
+  { text: ["", "swe intern", "1.22"] },
   { text: ["", "waterloo, on", "-4.22"], spacing: 8 },
-  { text: ["td bank", "swe intern", "5.21"] },
-  { text: ["", "remote", "-8.21"], spacing: 8 },
   DIVIDER,
   { text: ["**studying**"], spacing: 8 },
   { text: ["uwaterloo", "software engineering;", "9.20"] },
@@ -48,16 +55,21 @@ export const LINES: ILine[] = [
   { text: ["about", "fb marketplace", ""] },
   { text: ["", "crafty design", ""], spacing: 8 },
   DIVIDER,
-  { text: ["card: **** **** **** 0160"], isLeft: true },
-  { text: ["auth code: 200220"], isLeft: true },
+  { text: [`card: **** **** **** ${randomNumber(4)}`], isLeft: true },
+  { text: [`auth code: ${randomNumber(6)}`], isLeft: true },
   { text: ["cardholder: grace gao"], isLeft: true, spacing: 24 },
   { text: ["thank you for visiting!"], spacing: 16 },
   { text: ["open to 2025 new grad roles"] },
 ];
 
-export const NO_HIGHLIGHT = new Set<string>(["item", "detail", "date", DIVIDER.text[0]]);
+export const NO_HIGHLIGHT = new Set<string>([
+  "item",
+  "detail",
+  "date",
+  DIVIDER.text[0],
+]);
 
 export const ALWAYS_HIGHLIGHT = new Set<string>([
   "grace gao",
-  "open to 2025 new grad roles"
+  "open to 2025 new grad roles",
 ]);

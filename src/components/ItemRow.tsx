@@ -38,7 +38,7 @@ export const Highlight = styled.span<{
   ${(props) =>
     `
       background: linear-gradient(to right, transparent 50%, ${
-        props.permanent ? "#CCFFC3" : props.enabled ? "#f4ffb2" : "none"
+        (props.permanent || props.enabled) ? "#f4ffb2" : "none"
       } 50%);
       background-size: 200% 100%;
       background-position: ${props.permanent ? "-99.99% 0" : "-0% 0"};
