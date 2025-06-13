@@ -5,8 +5,7 @@ import FullRow from "./FullRow";
 import Spacer from "./Spacer";
 import Barcode from "../images/barcode.png";
 
-import { AiFillGithub, AiFillLinkedin } from "react-icons/ai";
-import { MdEmail } from "react-icons/md";
+import { FaLinkedin, FaGithub, FaEnvelope } from "react-icons/fa";
 import IconButton from "./IconButton";
 import { LINES, RECEIPT_HEIGHT } from "../const/ReceiptData";
 
@@ -139,15 +138,15 @@ export default function ScrollingText() {
           <Spacer height={16} />
           <IconRow>
             <IconButton link="https://www.linkedin.com/in/gracewgao/">
-              <AiFillLinkedin />
+              <FaLinkedin />
             </IconButton>
-            <Spacer width={8} />
+            <Spacer width={12} />
             <IconButton link="https://github.com/gracewgao">
-              <AiFillGithub />
+              <FaGithub />
             </IconButton>
-            <Spacer width={8} />
+            <Spacer width={12} />
             <IconButton link="mailto:grace.gao2@uwaterloo.ca">
-              <MdEmail />
+              <FaEnvelope />
             </IconButton>
           </IconRow>
           <Spacer height={16} />

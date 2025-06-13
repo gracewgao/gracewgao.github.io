@@ -1,4 +1,4 @@
-export const RECEIPT_HEIGHT = 1000;
+export const RECEIPT_HEIGHT = 980;
 
 const DIVIDER: ILine = {
   text: ["-------------------------------------"],
@@ -29,9 +29,9 @@ export const LINES: ILine[] = [
   DIVIDER,
   { text: ["item", "detail", "date"] },
   DIVIDER,
-  { text: ["**coding**"], spacing: 8 },
+  { text: ["**experience**"], spacing: 8 },
   { text: ["figma", "swe intern", "5.24"] },
-  { text: ["", "san francisco, ca", "-now"], spacing: 8 },
+  { text: ["", "san francisco, ca", "-9.24"], spacing: 8 },
   { text: ["datadog", "swe intern", "1.24"] },
   { text: ["", "new york city, ny", "-4.24"], spacing: 8 },
   { text: ["bloomberg", "swe intern", "5.23"] },
@@ -41,25 +41,24 @@ export const LINES: ILine[] = [
   { text: ["", "swe intern", "1.22"] },
   { text: ["", "waterloo, on", "-4.22"], spacing: 8 },
   DIVIDER,
-  { text: ["**studying**"], spacing: 8 },
+  { text: ["**education**"], spacing: 8 },
   { text: ["uwaterloo", "software engineering;", "9.20"] },
   { text: ["", "combinatorics minor", "-4.25"], spacing: 8 },
   { text: ["uc3m", "study abroad;", "9.23"] },
   { text: ["", "madrid, spain", "-12.23"], spacing: 8 },
   DIVIDER,
   { text: ["**currently**"], spacing: 8 },
-  { text: ["learning", "security", ""] },
-  { text: ["", "human anatomy", ""] },
-  { text: ["", "spanish", ""], spacing: 8 },
+  { text: ["learning", "portraiture", ""] },
+  { text: ["", "latte art", ""] },
+  { text: ["", "french vocabulary", ""], spacing: 8 },
   { text: ["excited", "interactive art", ""] },
-  { text: ["about", "fb marketplace", ""] },
-  { text: ["", "crafty design", ""], spacing: 8 },
+  { text: ["about", "sugar", ""] },
+  { text: ["", "secondhand shopping", ""], spacing: 8 },
   DIVIDER,
   { text: [`card: **** **** **** ${randomNumber(4)}`], isLeft: true },
   { text: [`auth code: ${randomNumber(6)}`], isLeft: true },
   { text: ["cardholder: grace gao"], isLeft: true, spacing: 24 },
-  { text: ["thank you for visiting!"], spacing: 16 },
-  { text: ["open to 2025 new grad roles"] },
+  { text: ["thank you for visiting!"] },
 ];
 
 export const NO_HIGHLIGHT = new Set<string>([
@@ -71,5 +70,4 @@ export const NO_HIGHLIGHT = new Set<string>([
 
 export const ALWAYS_HIGHLIGHT = new Set<string>([
   "grace gao",
-  "open to 2025 new grad roles",
 ]);
