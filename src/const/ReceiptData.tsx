@@ -1,4 +1,4 @@
-export const RECEIPT_HEIGHT = 980;
+export const RECEIPT_HEIGHT = 1000;
 
 const DIVIDER: ILine = {
   text: ["-------------------------------------"],
@@ -30,7 +30,9 @@ export const LINES: ILine[] = [
   { text: ["item", "detail", "date"] },
   DIVIDER,
   { text: ["**experience**"], spacing: 8 },
-  { text: ["figma", "swe intern", "5.24"] },
+  { text: ["figma", "security engineer", "9.25"] },
+  { text: ["", "new york city, ny", "-now"], spacing: 8 },
+  { text: ["", "swe intern", "5.24"] },
   { text: ["", "san francisco, ca", "-9.24"], spacing: 8 },
   { text: ["datadog", "swe intern", "1.24"] },
   { text: ["", "new york city, ny", "-4.24"], spacing: 8 },
@@ -49,7 +51,7 @@ export const LINES: ILine[] = [
   DIVIDER,
   { text: ["**currently**"], spacing: 8 },
   { text: ["learning", "portraiture", ""] },
-  { text: ["", "latte art", ""] },
+  { text: ["", "oil pastels", ""] },
   { text: ["", "french vocabulary", ""], spacing: 8 },
   { text: ["excited", "interactive art", ""] },
   { text: ["about", "sugar", ""] },

@@ -107,7 +107,9 @@ export default function ScrollingText() {
           case 1:
             return (
               <>
-                <FullRow item={curRow[0]} left={row.isLeft ?? false}>{curRow[0]}</FullRow>
+                <FullRow item={curRow[0]} left={row.isLeft ?? false}>
+                  {curRow[0]}
+                </FullRow>
                 <Spacer height={row.spacing ?? 0} />
               </>
             );
@@ -128,8 +130,14 @@ export default function ScrollingText() {
       })}
       {showFooter ? (
         <>
-          <FullRow item="see resume">
-            <a href="mailto:grace.gao2@uwaterloo.ca">get in touch</a>
+          <FullRow item="portfolio">
+            <a
+              href="https://gracewgao.me/portfolio/"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              see projects
+            </a>
           </FullRow>
           <Spacer height={24} />
           <BarcodeImage />
